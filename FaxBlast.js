@@ -12,7 +12,6 @@ async function run() {
 
 	/* login()
 	* Enter credentials and logs in
-	* #TODO: receive credentials from another document.
 	*/
 	async function login() {
 		console.log("login() begin");
@@ -22,7 +21,7 @@ async function run() {
 		const LOGIN_BTN = '#submitButton'
 
 		// Log in
-		// Credentials #TODO: Export to some other file
+		// Credentials
 		await page.click(USERNAME_SELECTOR);
 		await page.keyboard.type(config.email);
 		await page.click(PASSWORD_SELECTOR);
@@ -118,7 +117,7 @@ async function run() {
 		const UPLOAD_SELECTOR = "#uploadFiles";
 		await page.waitForSelector(UPLOAD_SELECTOR);  
 		const fileEle = await page.$(UPLOAD_SELECTOR);
-		await fileEle.uploadFile(config.file);		// #TODO: move this to parameters
+		await fileEle.uploadFile(config.file);
 
 		// Remove cover page
 		const COVERPAGE_SELECTOR = "#chk_includeCoverPage";
