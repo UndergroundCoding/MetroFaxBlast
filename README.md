@@ -1,4 +1,4 @@
-# MetroFax Automatic Send API
+# MetroFax Blast API
 The purpose of this program is to facilitate sending bulk fax to a list of contacts through MetroxFax.
 
 Because MetroFax limits fax blasts to 50 hand-marked contacts, sending faxes to thousands of contacts can become a laborious and time-consuming task.
@@ -8,9 +8,16 @@ Because MetroFax limits fax blasts to 50 hand-marked contacts, sending faxes to 
 2. Adjust config.JSON to desired settings.
 3. Run with `node FaxBlast.js`
 
+## Adjusting config.JSON
+1. email and password: account credentials.
+2. numPerSend: Total number of contacts to send fax at once. Working max = 49.
+3. company: Every client matching this parameter will be added to the send list.
+4. file: File path. Check with MetroFax for acceptable extensions. The program makes no effor to ensure proper file selection.
+
 ## Known Errors
 * The last send iteration throws error and does not send file
 
 ## To Do
 * Add more sending criterias besides company == <something>
 * Add checks for empty fields in config.JSON
+* Check "file" input for valid extension
