@@ -144,7 +144,7 @@ async function run() {
 		let count = 0;
 			do {
 				count = await markContacts(count);
-				//await uploadFile();
+				await uploadFile();
 			} while(count > 0);
 	} catch(err) {
 		console.log(err);
