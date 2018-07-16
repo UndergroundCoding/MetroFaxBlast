@@ -3,12 +3,12 @@ const config = require("./config.json");
 
 async function run() {
 	const browser = await puppeteer.launch({
-		headless: false});
+		headless: true});
 	const page = await browser.newPage();
-	await page.setViewport({width: 1500, height: 1500})
+	//await page.setViewport({width: 1500, height: 1500})	// For headless: false
 	await page.goto('https://myaccount.metrofax.com/myaccount/logout');
 	
-	const MAX_SEND = 49;		// Maximum number of faxes to send per request
+	const MAX_SEND = config.numPerSend;		// Maximum number of faxes to send per request
 
 	/* login()
 	* Enter credentials and logs in
