@@ -15,7 +15,7 @@ Because MetroFax limits fax blasts to 50 hand-marked contacts, sending faxes to 
 4. file: File path. Check with MetroFax for acceptable extensions. The program makes no effor to ensure proper file selection.
 
 ## Known Errors
-* The last send iteration throws error and does not send file
+* There are no known errors at the moment.
 
 ## To Do
 * Add more sending criterias besides company == <something>
