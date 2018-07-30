@@ -3,6 +3,8 @@ The purpose of this program is to facilitate sending bulk fax to a list of conta
 
 Because MetroFax limits fax blasts to 50 hand-marked contacts, sending faxes to thousands of contacts can become a laborious and time-consuming task.
 
+With the aid of this simple script, let Puppeteer headless browser do all the work for you.
+
 ## To Run
 1. Make sure Node.js is installed and install the puppeteer api.
 2. Adjust config.JSON to desired settings.
