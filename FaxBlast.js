@@ -10,9 +10,9 @@ async function run() {
 	
 	const MAX_SEND = config.numPerSend;		// Maximum number of faxes to send per request
 
-	/* login()
-	* Enter credentials and logs in
-	*/
+	/**
+	 * Enter credentials and logs in
+	 */
 	async function login() {
 		console.log("login() begin");
 		// Selectors
@@ -34,7 +34,7 @@ async function run() {
 		console.log("login() done");
 	}
 
-	/* markContacts()
+	/**
 	 * Creates an array with the ID of all contacts that are to receive a fax
 	 * @count : The location of the last contact to receive fax.
 	 */
@@ -75,7 +75,7 @@ async function run() {
 		
 		// Check if all faxes already sent
 		if(count >= result.length) {
-			console.log("markContacts() return -1");
+			console.log("No more contacts to send to.");
 			await page.goto('https://myaccount.metrofax.com/myaccount');
 			return -1;
 		}
@@ -84,9 +84,7 @@ async function run() {
 		let limit = count + MAX_SEND;
 		
 		if(limit > result.length) {
-			console.log("limit before assignment = " + limit);
 			limit = result.length;
-			console.log("limit after assignment = " + limit);
 		}
 		
 		console.log("limit = " + limit);
@@ -145,6 +143,7 @@ async function run() {
 				count = await markContacts(count);
 				await uploadFile();
 			} while(count > 0);
+		console.log("Program done!");
 	} catch(err) {
 		console.log(err);
 	}
